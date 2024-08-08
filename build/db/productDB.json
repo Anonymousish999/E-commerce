@@ -1,0 +1,58 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Apples",
+            "price": 100,
+            "category": "Fruits"
+        },
+        {
+            "id": 2,
+            "name": "Bananas",
+            "price": 50,
+            "category": "Fruits"
+        },
+        {
+            "id": 3,
+            "name": "Oranges",
+            "price": 80,
+            "category": "Fruits"
+        },
+        {
+            "id": 4,
+            "name": "Tomatoes",
+            "price": 30,
+            "category": "Vegetables"
+        },
+        {
+            "id": 5,
+            "name": "Potatoes",
+            "price": 20,
+            "category": "Vegetables"
+        },
+        {
+            "id": 6,
+            "name": "Onions",
+            "price": 40,
+            "category": "Vegetables"
+        },
+        {
+            "id": 7,
+            "name": "Earbuds",
+            "price": 500,
+            "category": "Electronics"
+        },
+        {
+            "id": 8,
+            "name": "Smartphones",
+            "price": 20000,
+            "category": "Electronics"
+        },
+        {
+            "id": 9,
+            "name": "Laptops",
+            "price": 50000,
+            "category": "Electronics"
+        }
+    ]
+}
