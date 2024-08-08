@@ -3,22 +3,28 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const addProduct_1 = __importDefault(require("./addProduct"));
-const addProduct_2 = require("./addProduct");
+// import products from './addProduct';
+const productDB_json_1 = __importDefault(require("../db/productDB.json"));
+const addProduct_1 = require("./addProduct");
 const prompt_sync_1 = __importDefault(require("prompt-sync"));
 const prompt = (0, prompt_sync_1.default)();
 function displayProducts(products) {
     products.forEach((product) => {
-        console.log(product.getName() + '  ' + product.getPrice() + '  ' + product.getCategory());
+        console.log(product.name +
+            "\t" +
+            product.price +
+            "\t" +
+            product.category);
     });
 }
+let products1 = productDB_json_1.default.products;
 function deleteProduct() {
-    let category = prompt('Enter the category of the product: ');
-    let productsByCategory = (0, addProduct_2.getProductsByCategory)(category);
-    console.log('name' + '  ' + 'price' + '  ' + 'category');
+    let category = prompt("Enter the category of the product: ");
+    let productsByCategory = (0, addProduct_1.getProductsByCategory)(category);
+    console.log("name" + "\t\t\t" + "price" + "\t\t\t" + "category");
     displayProducts(productsByCategory);
-    let products1 = addProduct_1.default.filter((product) => product.getCategory() !== category);
-    console.log('After deleting the product:');
-    displayProducts(products1);
+    let products2 = products1.filter((product) => product.category !== category);
+    console.log("After deleting the product:");
+    displayProducts(products2);
 }
 deleteProduct();
