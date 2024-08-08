@@ -18,3 +18,15 @@ products.push(product1);
 products.push(product2);
 products.push(product3);
 products.push(product4);
+products.push(product5);
+products.push(product6);
+products.push(product7);
+products.push(product8);
+products.push(product9);
+products.push(product10);
+
+export default products;
+
+export function getProductsByCategory(category: string): Product[] {
+  return products.filter((product) => product.getCategory() === category);
+}
