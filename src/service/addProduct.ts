@@ -1,7 +1,8 @@
 //import { products } from '.';
 //import {Product} from '../model/product';
-import { get } from 'http';
+//import { get } from 'http';
 import products from '../db/productDB.json';
+import logger from '../logger/logger';
 
 
 // let products = new Array<Product>();
@@ -30,8 +31,12 @@ import products from '../db/productDB.json';
 // products.push(product10);
 
 // export default products;
-export function getProductsByCategory(category: string): any {
-  return products.products.filter((product:any) => product.category === category);
+export function getProductsByCategory(category: string): any { 
+  let product =  products.products.filter((product:any) => product.category === category);
+  if(product.length === 0){
+    logger.error('No product found in the category');
+  }
+    return product;
 }
 
 //console.log(getProductsByCategory('Fruits'));

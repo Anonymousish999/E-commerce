@@ -4,7 +4,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getProductsByCategory = getProductsByCategory;
+//import { products } from '.';
+//import {Product} from '../model/product';
+//import { get } from 'http';
 const productDB_json_1 = __importDefault(require("../db/productDB.json"));
+const logger_1 = __importDefault(require("../logger/logger"));
 // let products = new Array<Product>();
 // let product1 = new Product(1, 'Apple', 100, 'Fruit');
 // let product2 = new Product(2, 'Earbuds', 200, 'Electronics');
@@ -28,7 +32,11 @@ const productDB_json_1 = __importDefault(require("../db/productDB.json"));
 // products.push(product10);
 // export default products;
 function getProductsByCategory(category) {
-    return productDB_json_1.default.products.filter((product) => product.category === category);
+    let product = productDB_json_1.default.products.filter((product) => product.category === category);
+    if (product.length === 0) {
+        logger_1.default.error('No product found in the category');
+    }
+    return product;
 }
 //console.log(getProductsByCategory('Fruits'));
 //console.log(products.products);
